@@ -9,9 +9,9 @@
     <h1>Suivi de progression à la batterie.</h1>
     <!-- Acces à la base de données -->
     <?php
-    require "../config.php";
+    require "../includes/db.php";
     try {
-            $pdo=new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+            $pdo=connexionBDD();
             if (isset($_POST["titre"])) {
                 $stmt = $pdo->prepare("INSERT INTO morceaux (titre, artiste, statut) VALUES (?, ?, ?)");
                 $stmt->execute([$_POST["titre"], $_POST["artiste"], $_POST["statut"]]);
