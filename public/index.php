@@ -9,7 +9,7 @@
     <h1>Suivi de progression à la batterie.</h1>
     <!-- Acces à la base de données -->
     <?php
-    require "config.php";
+    require "../config.php";
     try {
             $pdo=new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
             if (isset($_POST["titre"])) {
